@@ -1,0 +1,41 @@
+
+Host login*
+Hostname %h.i.ajkdns.com
+User kerncai
+
+Host *10-*
+HostName %h.i.ajkdns.com
+ProxyCommand ssh 10.100.3.58 nc %h %p
+User root
+
+Host *20-*
+HostName %h.i.ajkdns.com
+ProxyCommand ssh 10.200.1.12 nc %h %p
+User root
+
+Host puppet
+HostName %h.i.ajkdns.com
+ProxyCommand ssh 10.100.3.58 nc %h %p
+User root
+
+Host salt
+HostName %h.i.ajkdns.com
+ProxyCommand ssh 10.100.3.58 nc %h %p
+User root
+
+Host 100
+HostName 192.168.1.1000
+User kerncai
+
+Host 15
+Hostname 192.168.188.15
+User root
+
+
+
+
+
+    SendEnv LANG LC_*
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
